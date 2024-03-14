@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <h1 class="main__title">План обучения</h1>
+        <h2 class="main__subtitle">Списки заданий:</h2>
+        <div class="march">
+            <h3 class="month">Март</h3>
+            <input type="text" class="task-input" placeholder="Добавить задачу">
+            <button class="add-button">Добавить</button>
+            <ul class="task-list"></ul>
+        </div>
+        <div class="april">
+            <h3 class="month">Апрель</h3>
+            <input type="text" class="task-input1" placeholder="Добавить задачу">
+            <button class="add-button1">Добавить</button>
+            <ul class="task-list1"></ul>
+        </div>
+    </main>
+    <script>
+        "use strict"
+        const taskInput = document.querySelector(".task-input");
+        const addButton = document.querySelector(".add-button");
+        const taskList = document.querySelector(".task-list");
+
+        const taskInput1 = document.querySelector(".task-input1");
+        const addButton1 = document.querySelector(".add-button1");
+        const taskList1 = document.querySelector(".task-list1");
+
+        if (localStorage.getItem("tasks")) {
+            taskList.innerHTML = localStorage.getItem("tasks");
+        }
+
+        if (localStorage.getItem("tasks1")) {
+            taskList1.innerHTML = localStorage.getItem("tasks1");
+        }
+
+        addButton.addEventListener("click", () => {
+            const taskDsc = taskInput.value;
+            if (taskDsc !== '') {
+                const li = document.createElement("li");
+                li.classList.add('task-li');
+                li.innerHTML = `
+                <span class="task-dsc">${taskDsc}</span>
+                <button class="dlt-button">Удалить</button>
+                `;
+
+                taskList.appendChild(li);
+                taskInput.value = '';
+
+                localStorage.setItem("tasks", taskList.innerHTML);
+            };
+        });
+
+        addButton1.addEventListener("click", () => {
+            const taskDsc = taskInput1.value;
+            if (taskDsc !== '') {
+                const li = document.createElement("li");
+                li.classList.add('task-li');
+                li.innerHTML = `
+                <span class="task-dsc">${taskDsc}</span>
+                <button class="dlt-button">Удалить</button>
+                `;
+
+                taskList1.appendChild(li);
+                taskInput1.value = '';
+
+                localStorage.setItem("tasks1", taskList1.innerHTML);
+            };
+        });
+
+
+        taskList.addEventListener("click", event => {
+            if(event.target.classList.contains('dlt-button')) {
+                const li = event.target.closest('li');
+                li.parentNode.removeChild(li);
+
+                localStorage.setItem("tasks", taskList.innerHTML);
+            }
+        })
+
+        taskList1.addEventListener("click", event => {
+            if(event.target.classList.contains('dlt-button')) {
+                const li = event.target.closest('li');
+                li.parentNode.removeChild(li);
+
+                localStorage.setItem("tasks1", taskList1.innerHTML);
+            }
+        })
+
+    </script>
+</body>
+
+</html>
+
+<!-- <p class="course-1">DOM, API JS - 14, 15, 16 марта закончить</p>
+            <p class="VanySite">Внести правки - 17 марта</p>
+            <p class="course-2">Vue.js - 18, 19, 20, 21, 22, 23 марта</p>
+            <p class="CIDC">CI/CD 1 урок - 21 марта в 20:00</p>
+            <p class="VanySite">Внести правки, сделать адаптив - 24 марта</p>
+            <p class="course-2">Vue.js - 25, 26 марта закончить</p>
+            <p class="unit">Unit-тесты - 27, 28, 29, 30 марта закончить</p>
+            <p class="VanySite">Внести правки, закончить сайт - 31 марта</p> -->
+
+<!--        <p class="unit">Unit-тесты - 1, 2 апреля закончить</p>
+            <p class="CICD">3, 4, 5 апреля - закончить курс CI/CD</p>
+            <p class="text">До 8 апреля сдать все итоговые работы!</p>
+            <p class="diplom">Диплом - с 8 по 17 апреля придумать, написать, проверить</p>
+            <p class="diplom">Сдача диплома 18 апреля!</p> -->

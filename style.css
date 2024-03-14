@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0 30%;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+h3 {
+    margin-top: 40px;
+}
+
+.task-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.task-input1 {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.add-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.add-button1 {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-button1:hover {
+    background-color: #45a049;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.task-list1 {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.task-li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-dsc {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.dlt-button {
+    background-color: #dd0b0bd7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+
